@@ -1,0 +1,110 @@
+.book-card {
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .book-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .book-card-body {
+    padding: 20px;
+  }
+  .book-card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  .book-card-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 15px;
+    text-align: justify;
+  }
+
+
+  
+  body {
+  background-color: rgba(212, 185, 212, 0.2);  /* Semi-transparent purple */
+}
+.navbar {
+    background-color: #6f42c1; /* Purple Color */
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.navbar-brand:hover, .nav-link:hover {
+    color: #e1bee7 !important; /* Lighter Purple for hover */
+}
+.hero {
+    background-image: url('../water.gif');
+background-size: cover;               /* Ensures the image covers the entire area */
+background-position: bottom;          /* Anchors the image to the bottom */
+background-repeat: no-repeat;         /* Prevents tiling */
+color: white;
+padding: 100px 0;
+text-align: center;
+position: relative;                        /* Full viewport width */
+height: 60vh; 
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 1s forwards;
+}
+.hero p {
+    animation-delay: 0.5s;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer {
+    background-color: #5a3e9b; /* Darker Purple */
+    color: white;
+    padding: 40px 0;
+}
+.footer a {
+    color: white;
+    margin: 0 10px;
+}
+.post {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.5s forwards;
+}
+.post:nth-child(1) { animation-delay: 0.3s; }
+.post:nth-child(2) { animation-delay: 0.6s; }
+.post:nth-child(3) { animation-delay: 0.9s; }
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.5s forwards;
+}

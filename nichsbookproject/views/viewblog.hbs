@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+  /* Ensure the body takes up at least 100% of the viewport height */
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* This container will fill all the available space */
+  .main-content {
+    flex-grow: 1; /* This allows the content to take up any remaining space */
+  }
+
+  /* Header */
+  header {
+    background-color: #6f42c1; /* Purple */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  header p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #4e1a8b; /* Darker Purple */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom */
+  }
+
+  footer a {
+    color: #ffddff; /* Light Purple */
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .blog-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6f42c1; /* Purple */
+    margin-bottom: 20px;
+  }
+
+  .blog-description {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+  }
+
+  .blog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  .author-info {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+  }
+
+  .author-info i {
+    margin-right: 8px;
+  }
+
+  .back-btn {
+    background-color: #6f42c1; /* Purple */
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+
+  .back-btn:hover {
+    background-color: #4e1a8b; /* Darker Purple */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .blog-title {
+      font-size: 2rem;
+    }
+
+    .blog-description {
+      font-size: 1rem;
+    }
+
+    .blog-content {
+      font-size: 1rem;
+    }
+
+    .back-btn {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Blogs</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="blog-container">
+      <h1 class="blog-title">{{record.heading}}</h1>
+      <p class="blog-description">{{record.briefDescription}}</p>
+
+      <div class="blog-content">
+        <p>{{record.bodyContent}}</p>
+      </div>
+
+      <div class="author-info">
+        <p><i class="bi bi-person-circle"></i> Posted by RAMJIN</p>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/" class="back-btn">Back to MainPage</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 RAMJIN | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+  </footer>
+</body>
+
+</html>

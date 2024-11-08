@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #dfe6f2, #f1e1f6); /* Softer purple-blue gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      text-align: center;
+    }
+    .login-card .form-control {
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    .btn-login {
+      background-color: #9b59b6; /* Softer purple button */
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    .btn-login:hover {
+      background-color: #8e44ad; /* Slightly darker purple */
+    }
+    .login-card .card-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+      text-align: center; /* Aligning the title to the left */
+    }
+    label {
+      font-weight: 600;
+    }
+    .login-card .form-group {
+      margin-bottom: 15px;
+    }
+    .text-center a {
+      color: #9b59b6;
+      text-decoration: none;
+    }
+    .text-center a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7f8c8d; /* Changed footer text color */
+    }
+    .footer a {
+      color: #9b59b6;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-card card">
+  <div class="card-body">
+    <h5 class="card-title">Login</h5>
+    <form action="/getadmin" method="post">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your Username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn btn-login btn-block">Login</button>
+      <div class="text-center mt-3">
+        <small><a href="#">Forgot your password?</a></small>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 RAMJIN. <a href="#">Privacy Policy</a></p>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

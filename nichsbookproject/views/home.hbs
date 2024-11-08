@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Showcase Blog</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">RAMJIN</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#about">Books</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="/login">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1 class="display-4">Library of poetic Heritage</h1>
+        <p class="lead">Discover the journey of writing and inspiration behind my book.</p>
+        <a href="#blog" class="btn btn-primary btn-lg">Read My Blog</a>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center book-card">
+      <!-- Book Image on the Left -->
+      <div class="col-md-4">
+        <img src="../bookpic.jpeg" alt="Book Cover" class="img-fluid">
+      </div>
+
+      <!-- Description on the Right -->
+      <div class="col-md-8 book-card-body">
+        <h2 class="book-card-title">About the Book</h2>
+        <p class="book-card-description">
+            Nicholas Sitso Kwashi Amessouwoe; also known as RAMJIN SPC is a young Ghanaian writer, poet, and published author. 
+            He is from Aflao, a small town in the Volta Region of Ghana. Nicholas loves putting words together to put people together.
+             His love for poetry and literature was spotted as early as he was eight. This inspired his dad to name him after the renowned
+              Senegalese late president and poet - Léopold Sédar Senghor. Though he has been a science student for the greater part of his
+               academic journey, Nicholas claimed to have been born into the prestigious universe of Arts before getting married to the Sciences.
+                His first book Ramjin Poems was published in 2020 immediately after he completed his Senior High School at Bishop Herman College
+                 in Kpando, Volta Region, Ghana. 
+
+Nicholas was awarded the Mastercard Foundation scholarship in 2021 to pursue a Bachelor’s Degree in Pharmacy
+ at USIU-Africa in Nairobi, Kenya. He is passionate about leadership and has assumed several leadership positions
+  including the Electoral College Representative of the School of Pharmacy and Health Sciences and the Ghanaian Community
+   Chairperson at USIU-Africa for the 2023/2024 academic year.  Besides being an art, science, and leadership enthusiast,
+    Nicholas loves Sports, and he is a big fan of “the beautiful game” i.e., football. He also loves teaching and helping others.
+     He believes the greatest glory of the human constellation is to shake hands with our polished purposes and bring the best out of
+      any environment, both natural and man-made. He is currently working towards becoming the greatest best version of his greatest best self:
+       the Einstein of Literature.
+        </p>
+          
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Blog Posts</h2>
+        <div class="row">
+            {{#each blogs}}
+            <div class="col-md-4 post fade-in">
+                <div class="card">
+                    <img src="../nicho2.jpg" class="card-img-top" alt="Blog Post Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.heading}}</h5>
+                        <p class="card-text">{{this.briefDescription}}</p>
+                        <form action="/view" method="post">
+                        <input type="hidden" id="ID" name="ID", value="{{this.ID}}">
+                        <button type="submit" class="btn btn-primary">Read More</button>
+                        </form>
+                    </div>
+                </div>
+               
+            </div>
+             {{/each}}
+            
+        </div>
+    </div>
+</section>
+
+<footer class="footer text-center">
+    <div class="container">
+        <h5>Stay Connected</h5>
+        <p>&copy; 2024 Ramjin Book Showcase. All rights reserved.</p>
+        <div>
+            <a href="https://www.facebook.com/share/19Z3fFxSvg/" target="_blank">
+        <i class="fab fa-facebook fa-lg"></i>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/nicholas-amessouwoe-b54a7b1a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+        <i class="fab fa-linkedin fa-lg"></i>
+    </a>
+
+    <!-- Instagram Icon -->
+    <a href="https://www.instagram.com/ramjinspc/profilecard/?igsh=MTgyZTN6bjBzdDJwZw==" target="_blank">
+        <i class="fab fa-instagram fa-lg"></i>
+    </a>
+
+    <a id="contact">
+        <i class="bi bi-telephone"></i> +233 544676363
+    </a>
+        </div>
+    </div>
+</footer>
+<script src="../handlePics.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
