@@ -3,6 +3,7 @@ const session = require('express-session'); // Import express-session
 const app = express();
 const fs = require('fs');
 const port = process.env.PORT || 3000;
+const path = require('path');
 
 
 
@@ -21,7 +22,7 @@ app.use(session({
 }));
 
 app.set('view engine', 'hbs');
-app.set('views', 'views');
+app.set('views', path.join(__dirname,'views'));
 app.use(express.static('public'));
 
 
