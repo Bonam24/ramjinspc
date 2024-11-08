@@ -27,6 +27,7 @@ app.use(express.static('public'));
 
 
 
+
 // Example of using session in a route
 app.get('/', (req, res) => {
   const blogs = getAllBlogPosts();
@@ -62,7 +63,7 @@ app.post('/getadmin', (req, res) => {
 
     // Read the existing data from 'blog.json' if it exists
     try {
-        const data = fs.existsSync('blog.json') ? fs.readFileSync('blog.json') : '{}';
+        const data = fs.existsSync(path.join(__dirname,'blog.json')) ? fs.readFileSync(path.join(__dirname,'blog.json')) : '{}';
         blog = JSON.parse(data);
     } catch (err) {
         console.error("Error reading JSON file:", err);
@@ -74,7 +75,7 @@ app.post('/getadmin', (req, res) => {
 
     // Write the updated data back to 'blog.json'
     try {
-        fs.writeFileSync('blog.json', JSON.stringify(blog, null, 2));
+        fs.writeFileSync(path.join(__dirname,'blog.json'), JSON.stringify(blog, null, 2));
         res.redirect('/admin');
     } catch (err) {
         console.error("Error writing to JSON file:", err);
@@ -93,7 +94,7 @@ app.post('/getadmin', (req, res) => {
 
     // Read the existing data from 'blog.json' if it exists
     try {
-        const data = fs.existsSync('blog.json') ? fs.readFileSync('blog.json') : '{}';
+        const data = fs.existsSync(path.join(__dirname,'blog.json')) ? fs.readFileSync(path.join(__dirname,'blog.json')) : '{}';
         blog = JSON.parse(data);
     } catch (err) {
         console.error("Error reading JSON file:", err);
@@ -105,7 +106,7 @@ app.post('/getadmin', (req, res) => {
 
     // Write the updated data back to 'blog.json'
     try {
-        fs.writeFileSync('blog.json', JSON.stringify(blog, null, 2));
+        fs.writeFileSync(path.join(__dirname,'blog.json'), JSON.stringify(blog, null, 2));
         res.redirect('/admin');
     } catch (err) {
         console.error("Error writing to JSON file:", err);
@@ -120,7 +121,7 @@ app.post('/edit', (req, res) => {
     const { ID } = req.body;
     let blog = {};
     try {
-        const data = fs.existsSync('blog.json') ? fs.readFileSync('blog.json') : '{}';
+        const data = fs.existsSync(path.join(__dirname,'blog.json')) ? fs.readFileSync(path.join(__dirname,'blog.json')) : '{}';
         blog = JSON.parse(data);
     } catch (err) {
         console.error("Error reading JSON file:", err);
@@ -143,7 +144,7 @@ app.listen(port, () => {
 const getAllBlogPosts = () => {
   try {
     // Read the blog.json file
-    const data = fs.readFileSync( 'blog.json', 'utf-8');
+    const data = fs.readFileSync( path.join(__dirname,'blog.json'), 'utf-8');
     
     // Parse the JSON data
     const blogPosts = JSON.parse(data);
@@ -168,7 +169,7 @@ const getAllBlogPosts = () => {
 app.post('/view', (req, res) => {
   const { ID } = req.body;
   
-  fs.readFile('blog.json', 'utf8', (err, data) => {
+  fs.readFile(path.join(__dirname,'blog.json'), 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading file:', err);
       return;
@@ -187,7 +188,7 @@ app.post('/delete', (req, res) => {
   const { ID } = req.body;
   let blog = {};
   try {
-      const data = fs.existsSync('blog.json') ? fs.readFileSync('blog.json') : '{}';
+      const data = fs.existsSync(path.join(__dirname,'blog.json')) ? fs.readFileSync(path.join(__dirname,'blog.json')) : '{}';
       blog = JSON.parse(data);
   } catch (err) {
       console.error("Error reading JSON file:", err);
@@ -195,7 +196,7 @@ app.post('/delete', (req, res) => {
   }
   delete blog[ID];
   try {
-      fs.writeFileSync('blog.json', JSON.stringify(blog, null, 2));
+      fs.writeFileSync(path.join(__dirname,'blog.json'), JSON.stringify(blog, null, 2));
       res.redirect('/admin');
   } catch (err) {
       console.error("Error writing to JSON file:", err);
